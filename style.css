@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #121212;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background-image: url(images/background-img.png);
+    background-size: cover;
+    height: 208px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header > div{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1{
+    font-size: 43px;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+header a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+form{
+    display: flex;
+    max-height: 38px;
+    gap: 0;
+    position: absolute;
+    bottom: -10px;
+    font-family: inherit;
+}
+
+input{
+    width: 342px;
+    height: 38px;
+    padding: 9px 13px;
+    border: none;
+    border-radius: 8px 0 0  8px;
+    font-family: inherit;
+    background-color: #2e2e2f;
+    color: #A5A5A5;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    background-image: url(images/search-Icon.png);
+    background-repeat: no-repeat;
+    background-position: 9px center;
+}
+
+input::placeholder{
+padding-left: 20px;
+}
+
+button{
+  font-family: inherit;
+   width: 120px;
+   border: none;
+   color: #FFFFFF;
+   background-color: #4B4B4B;
+   padding: 9px 11px 9px 17px;
+   border-radius: 0 6px  6px 0;
+   cursor: pointer;
+}
+
+main{
+    text-align: center;
+    margin: auto;
+} 
+.explore{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   color: #2E2E2F;
+   font-weight: 700;
+   font-size: 18px;
+   line-height: 20px;
+} 
