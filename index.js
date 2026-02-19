@@ -13,7 +13,7 @@ document.addEventListener('click', function(e){
 
 
 function addToWatchList(movieId){
-    fetch(`http://www.omdbapi.com/?apikey=3d68c74e&i=${movieId}`)
+    fetch(`https://www.omdbapi.com/?apikey=3d68c74e&i=${movieId}`)
         .then(res => res.json())
         .then(data => {
             watchlistArray.push(data)
@@ -27,11 +27,11 @@ form.addEventListener('submit', async function(e){
     const inputElm = document.getElementById('input-elm')
     let moviesArray = []
 
-    const response = await fetch(`http://www.omdbapi.com/?apikey=3d68c74e&s=${inputElm.value}`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=3d68c74e&s=${inputElm.value}`)
     const data = await response.json()
     if(data.Response === "True"){
          data.Search.forEach(function(searchResult){
-            fetch(`http://www.omdbapi.com/?apikey=3d68c74e&i=${searchResult.imdbID}`)
+            fetch(`https://www.omdbapi.com/?apikey=3d68c74e&i=${searchResult.imdbID}`)
                   .then(res => res.json())
                   .then(dataObj => {
                    moviesArray.push(dataObj)
