@@ -76,6 +76,10 @@ main{
     height: 221px;
 }
 
+.image-and-details:last-child{
+    border-bottom: none;
+}
+
 img.movie-poster{
     width: 99px;
     height: 147px;
@@ -119,15 +123,19 @@ img.movie-poster{
     gap: 20px;
 }
 
-.time-genre a,
+
+button.add-watchlist{
+    display: flex;
+    gap: 2px;
+    background: none;
+    border: none;
+   color: #FFFFFF;
+}
+
 .time-genre i{
     cursor: pointer;
 }
 
-.time-genre a{
-    text-decoration: none;
-    color: #FFFFFF;
-}
 .plot{
     text-align: left;
     color: #A5A5A5;

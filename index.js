@@ -1,6 +1,25 @@
 const form = document.querySelector('form')
 const render = document.getElementById('render')
 const explore = document.getElementById("explore")
+let watchlistArray = []
+
+document.addEventListener('click', function(e){
+    if(e.target.closest(".add-watchlist")){
+        if(e.target.id){
+        addToWatchList(e.target.id)
+        }
+    }
+})
+
+
+function addToWatchList(movieId){
+    fetch(`http://www.omdbapi.com/?apikey=3d68c74e&i=${movieId}`)
+        .then(res => res.json())
+        .then(data => {
+            watchlistArray.push(data)
+        })
+    localStorage.setItem("watchlistArray", JSON.stringify(watchlistArray))
+}
 
 
 form.addEventListener('submit', async function(e){
@@ -45,10 +64,10 @@ function renderMovies(moviesArray){
                             <div class="time-genre">
                                 <p>${movie.Runtime}</p>
                                 <p>${movie.Genre}</p>
-                                <div>
-                                    <i class="fa-solid fa-circle-plus"></i>
-                                     <a href="watchlist.html">Watchlist</a>
-                                </div>
+                                <button class="add-watchlist">
+                                    <i class="fa-solid fa-circle-plus" id="${movie.imdbID}"></i>
+                                     <p>Watchlist</p>
+                                </button>
                             </div>
                             <p class="plot">${movie.Plot}</p>
                        </div>
@@ -58,3 +77,5 @@ function renderMovies(moviesArray){
     explore.classList.add('hidden')
     render.innerHTML = eachMovie
 }
+
+
