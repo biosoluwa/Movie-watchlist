@@ -46,6 +46,7 @@ header a{
 
 form{
     display: flex;
+    width: 84%;
     max-height: 38px;
     gap: 0;
     position: absolute;
@@ -106,7 +107,7 @@ main{
 
 .image-and-details{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 21px;
     border-bottom: 1.5px solid #2C2C2C;
